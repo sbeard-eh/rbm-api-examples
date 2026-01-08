@@ -31,7 +31,7 @@ package com.google.api.services.businesscommunications.v1.model;
 public final class WebEntry extends com.google.api.client.json.GenericJson {
 
   /**
-   * Required. Label for the URI.
+   * Optional. Required for websites, optional otherwise. Label for the URI.
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
@@ -46,7 +46,7 @@ public final class WebEntry extends com.google.api.client.json.GenericJson {
   private java.lang.String uri;
 
   /**
-   * Required. Label for the URI.
+   * Optional. Required for websites, optional otherwise. Label for the URI.
    * @return value or {@code null} for none
    */
   public java.lang.String getLabel() {
@@ -54,7 +54,7 @@ public final class WebEntry extends com.google.api.client.json.GenericJson {
   }
 
   /**
-   * Required. Label for the URI.
+   * Optional. Required for websites, optional otherwise. Label for the URI.
    * @param label label or {@code null} for none
    */
   @com.google.errorprone.annotations.CanIgnoreReturnValue

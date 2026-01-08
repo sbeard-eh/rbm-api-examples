@@ -38,7 +38,7 @@ public final class Agent extends com.google.api.client.json.GenericJson {
   private java.lang.String brandName;
 
   /**
-   * Required. The name that the agent displays to users. Maximum 100 characters. Not modifiable
+   * Required. The name that the agent displays to users. Maximum 40 characters. Not modifiable
    * after agent verification.
    * The value may be {@code null}.
    */
@@ -78,7 +78,7 @@ public final class Agent extends com.google.api.client.json.GenericJson {
   }
 
   /**
-   * Required. The name that the agent displays to users. Maximum 100 characters. Not modifiable
+   * Required. The name that the agent displays to users. Maximum 40 characters. Not modifiable
    * after agent verification.
    * @return value or {@code null} for none
    */
@@ -87,7 +87,7 @@ public final class Agent extends com.google.api.client.json.GenericJson {
   }
 
   /**
-   * Required. The name that the agent displays to users. Maximum 100 characters. Not modifiable
+   * Required. The name that the agent displays to users. Maximum 40 characters. Not modifiable
    * after agent verification.
    * @param displayName displayName or {@code null} for none
    */

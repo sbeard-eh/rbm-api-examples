@@ -614,29 +614,6 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
         return this;
       }
 
-      /**
-       * For non-RBM cases: if true, any agents and locations associated with this brand are also
-       * deleted.
-       */
-      @com.google.api.client.util.Key
-      private java.lang.Boolean force;
-
-      /** For non-RBM cases: if true, any agents and locations associated with this brand are also deleted.
-       */
-      public java.lang.Boolean getForce() {
-        return force;
-      }
-
-      /**
-       * For non-RBM cases: if true, any agents and locations associated with this brand are also
-       * deleted.
-       */
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      public Delete setForce(java.lang.Boolean force) {
-        this.force = force;
-        return this;
-      }
-
       @com.google.errorprone.annotations.CanIgnoreReturnValue
       @Override
       public Delete set(String parameterName, Object value) {
@@ -1947,7 +1924,7 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
        *
        * @param parent Required. The unique identifier of the brand. If the brand identifier is "1234", this parameter
        *        resolves to "brands/1234". The brand identifier must be "-" to return all agents for an
-       *        RBM carrier.
+       *        RCS for Business carrier.
        * @return the request
        */
       public List list(java.lang.String parent) throws java.io.IOException {
@@ -1977,7 +1954,7 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
          *
          * @param parent Required. The unique identifier of the brand. If the brand identifier is "1234", this parameter
        *        resolves to "brands/1234". The brand identifier must be "-" to return all agents for an
-       *        RBM carrier.
+       *        RCS for Business carrier.
          * @since 1.13
          */
         protected List(java.lang.String parent) {
@@ -2069,14 +2046,14 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
         /**
          * Required. The unique identifier of the brand. If the brand identifier is "1234", this
          * parameter resolves to "brands/1234". The brand identifier must be "-" to return all
-         * agents for an RBM carrier.
+         * agents for an RCS for Business carrier.
          */
         @com.google.api.client.util.Key
         private java.lang.String parent;
 
         /** Required. The unique identifier of the brand. If the brand identifier is "1234", this parameter
-       resolves to "brands/1234". The brand identifier must be "-" to return all agents for an RBM
-       carrier.
+       resolves to "brands/1234". The brand identifier must be "-" to return all agents for an RCS for
+       Business carrier.
          */
         public java.lang.String getParent() {
           return parent;
@@ -2085,7 +2062,7 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
         /**
          * Required. The unique identifier of the brand. If the brand identifier is "1234", this
          * parameter resolves to "brands/1234". The brand identifier must be "-" to return all
-         * agents for an RBM carrier.
+         * agents for an RCS for Business carrier.
          */
         @com.google.errorprone.annotations.CanIgnoreReturnValue
         public List setParent(java.lang.String parent) {
@@ -5711,173 +5688,6 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
   }
 
   /**
-   * An accessor for creating requests from the SurveyQuestions collection.
-   *
-   * <p>The typical use is:</p>
-   * <pre>
-   *   {@code BusinessCommunications businesscommunications = new BusinessCommunications(...);}
-   *   {@code BusinessCommunications.SurveyQuestions.List request = businesscommunications.surveyQuestions().list(parameters ...)}
-   * </pre>
-   *
-   * @return the resource collection
-   */
-  public SurveyQuestions surveyQuestions() {
-    return new SurveyQuestions();
-  }
-
-  /**
-   * The "surveyQuestions" collection of methods.
-   */
-  public class SurveyQuestions {
-
-    /**
-     * Lists all Google predefined survey questions. *Note*: This method always sets `pageSize` to `0`.
-     *
-     * Create a request for the method "surveyQuestions.list".
-     *
-     * This request holds the parameters needed by the businesscommunications server.  After setting any
-     * optional parameters, call the {@link List#execute()} method to invoke the remote operation.
-     *
-     * @return the request
-     */
-    public List list() throws java.io.IOException {
-      List result = new List();
-      initialize(result);
-      return result;
-    }
-
-    public class List extends BusinessCommunicationsRequest<com.google.api.services.businesscommunications.v1.model.ListSurveyQuestionsResponse> {
-
-      private static final String REST_PATH = "v1/surveyQuestions";
-
-      /**
-       * Lists all Google predefined survey questions. *Note*: This method always sets `pageSize` to
-       * `0`.
-       *
-       * Create a request for the method "surveyQuestions.list".
-       *
-       * This request holds the parameters needed by the the businesscommunications server.  After
-       * setting any optional parameters, call the {@link List#execute()} method to invoke the remote
-       * operation. <p> {@link
-       * List#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must be
-       * called to initialize this instance immediately after invoking the constructor. </p>
-       *
-       * @since 1.13
-       */
-      protected List() {
-        super(BusinessCommunications.this, "GET", REST_PATH, null, com.google.api.services.businesscommunications.v1.model.ListSurveyQuestionsResponse.class);
-      }
-
-      @Override
-      public com.google.api.client.http.HttpResponse executeUsingHead() throws java.io.IOException {
-        return super.executeUsingHead();
-      }
-
-      @Override
-      public com.google.api.client.http.HttpRequest buildHttpRequestUsingHead() throws java.io.IOException {
-        return super.buildHttpRequestUsingHead();
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List set$Xgafv(java.lang.String $Xgafv) {
-        return (List) super.set$Xgafv($Xgafv);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setAccessToken(java.lang.String accessToken) {
-        return (List) super.setAccessToken(accessToken);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setAlt(java.lang.String alt) {
-        return (List) super.setAlt(alt);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setCallback(java.lang.String callback) {
-        return (List) super.setCallback(callback);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setFields(java.lang.String fields) {
-        return (List) super.setFields(fields);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setKey(java.lang.String key) {
-        return (List) super.setKey(key);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setOauthToken(java.lang.String oauthToken) {
-        return (List) super.setOauthToken(oauthToken);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setPrettyPrint(java.lang.Boolean prettyPrint) {
-        return (List) super.setPrettyPrint(prettyPrint);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setQuotaUser(java.lang.String quotaUser) {
-        return (List) super.setQuotaUser(quotaUser);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setUploadType(java.lang.String uploadType) {
-        return (List) super.setUploadType(uploadType);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List setUploadProtocol(java.lang.String uploadProtocol) {
-        return (List) super.setUploadProtocol(uploadProtocol);
-      }
-
-      /**
-       * Optional. List Google template questions by locale. Locale is represented by a well-formed
-       * IETF BCP 47 language tag. Default is EN.
-       */
-      @com.google.api.client.util.Key
-      private java.lang.String locale;
-
-      /** Optional. List Google template questions by locale. Locale is represented by a well-formed IETF BCP
-     47 language tag. Default is EN.
-       */
-      public java.lang.String getLocale() {
-        return locale;
-      }
-
-      /**
-       * Optional. List Google template questions by locale. Locale is represented by a well-formed
-       * IETF BCP 47 language tag. Default is EN.
-       */
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      public List setLocale(java.lang.String locale) {
-        this.locale = locale;
-        return this;
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public List set(String parameterName, Object value) {
-        return (List) super.set(parameterName, value);
-      }
-    }
-
-  }
-
-  /**
    * An accessor for creating requests from the Testers collection.
    *
    * <p>The typical use is:</p>
@@ -5897,6 +5707,129 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
    */
   public class Testers {
 
+    /**
+     * Sends an invite to a phone number to be added as a tester. The invited user must be RCS-enabled
+     * and reachable by the RCS for Business platform. When an agent invites a user to become a tester,
+     * an RCS for Business platform management agent sends a message to the user asking for confirmation
+     * that she wants to be a tester of the agent. Once the user confirms, she becomes a tester. An
+     * agent can send 20 tester requests each day with a total maximum of 200 tester requests. If you
+     * send tester requests above those limits, the RCS for Business platform returns a `429
+     * RESOURCE_EXHAUSTED` response.
+     *
+     * Create a request for the method "testers.create".
+     *
+     * This request holds the parameters needed by the businesscommunications server.  After setting any
+     * optional parameters, call the {@link Create#execute()} method to invoke the remote operation.
+     *
+     * @param content the {@link com.google.api.services.businesscommunications.v1.model.Tester}
+     * @return the request
+     */
+    public Create create(com.google.api.services.businesscommunications.v1.model.Tester content) throws java.io.IOException {
+      Create result = new Create(content);
+      initialize(result);
+      return result;
+    }
+
+    public class Create extends BusinessCommunicationsRequest<com.google.api.services.businesscommunications.v1.model.Tester> {
+
+      private static final String REST_PATH = "v1/testers";
+
+      /**
+       * Sends an invite to a phone number to be added as a tester. The invited user must be RCS-enabled
+       * and reachable by the RCS for Business platform. When an agent invites a user to become a
+       * tester, an RCS for Business platform management agent sends a message to the user asking for
+       * confirmation that she wants to be a tester of the agent. Once the user confirms, she becomes a
+       * tester. An agent can send 20 tester requests each day with a total maximum of 200 tester
+       * requests. If you send tester requests above those limits, the RCS for Business platform returns
+       * a `429 RESOURCE_EXHAUSTED` response.
+       *
+       * Create a request for the method "testers.create".
+       *
+       * This request holds the parameters needed by the the businesscommunications server.  After
+       * setting any optional parameters, call the {@link Create#execute()} method to invoke the remote
+       * operation. <p> {@link
+       * Create#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
+       * be called to initialize this instance immediately after invoking the constructor. </p>
+       *
+       * @param content the {@link com.google.api.services.businesscommunications.v1.model.Tester}
+       * @since 1.13
+       */
+      protected Create(com.google.api.services.businesscommunications.v1.model.Tester content) {
+        super(BusinessCommunications.this, "POST", REST_PATH, content, com.google.api.services.businesscommunications.v1.model.Tester.class);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create set$Xgafv(java.lang.String $Xgafv) {
+        return (Create) super.set$Xgafv($Xgafv);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setAccessToken(java.lang.String accessToken) {
+        return (Create) super.setAccessToken(accessToken);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setAlt(java.lang.String alt) {
+        return (Create) super.setAlt(alt);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setCallback(java.lang.String callback) {
+        return (Create) super.setCallback(callback);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setFields(java.lang.String fields) {
+        return (Create) super.setFields(fields);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setKey(java.lang.String key) {
+        return (Create) super.setKey(key);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setOauthToken(java.lang.String oauthToken) {
+        return (Create) super.setOauthToken(oauthToken);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setPrettyPrint(java.lang.Boolean prettyPrint) {
+        return (Create) super.setPrettyPrint(prettyPrint);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setQuotaUser(java.lang.String quotaUser) {
+        return (Create) super.setQuotaUser(quotaUser);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setUploadType(java.lang.String uploadType) {
+        return (Create) super.setUploadType(uploadType);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create setUploadProtocol(java.lang.String uploadProtocol) {
+        return (Create) super.setUploadProtocol(uploadProtocol);
+      }
+
+      @com.google.errorprone.annotations.CanIgnoreReturnValue
+      @Override
+      public Create set(String parameterName, Object value) {
+        return (Create) super.set(parameterName, value);
+      }
+    }
     /**
      * Deletes a tester device.
      *
@@ -6377,150 +6310,6 @@ public class BusinessCommunications extends com.google.api.client.googleapis.ser
       @Override
       public List set(String parameterName, Object value) {
         return (List) super.set(parameterName, value);
-      }
-    }
-
-  }
-
-  /**
-   * An accessor for creating requests from the V1 collection.
-   *
-   * <p>The typical use is:</p>
-   * <pre>
-   *   {@code BusinessCommunications businesscommunications = new BusinessCommunications(...);}
-   *   {@code BusinessCommunications.V1.List request = businesscommunications.v1().list(parameters ...)}
-   * </pre>
-   *
-   * @return the resource collection
-   */
-  public V1 v1() {
-    return new V1();
-  }
-
-  /**
-   * The "v1" collection of methods.
-   */
-  public class V1 {
-
-    /**
-     * Sends an invite to a phone number to be added as a tester. The invited user must be RCS-enabled
-     * and reachable by the RBM platform. When an agent invites a user to become a tester, an RBM
-     * platform management agent sends a message to the user asking for confirmation that she wants to
-     * be a tester of the agent. Once the user confirms, she becomes a tester. An agent can send 20
-     * tester requests each day with a total maximum of 200 tester requests. If you send tester requests
-     * above those limits, the RBM platform returns a `429 RESOURCE_EXHAUSTED` response.
-     *
-     * Create a request for the method "v1.testers".
-     *
-     * This request holds the parameters needed by the businesscommunications server.  After setting any
-     * optional parameters, call the {@link Testers#execute()} method to invoke the remote operation.
-     *
-     * @param content the {@link com.google.api.services.businesscommunications.v1.model.Tester}
-     * @return the request
-     */
-    public Testers testers(com.google.api.services.businesscommunications.v1.model.Tester content) throws java.io.IOException {
-      Testers result = new Testers(content);
-      initialize(result);
-      return result;
-    }
-
-    public class Testers extends BusinessCommunicationsRequest<com.google.api.services.businesscommunications.v1.model.Tester> {
-
-      private static final String REST_PATH = "v1/testers";
-
-      /**
-       * Sends an invite to a phone number to be added as a tester. The invited user must be RCS-enabled
-       * and reachable by the RBM platform. When an agent invites a user to become a tester, an RBM
-       * platform management agent sends a message to the user asking for confirmation that she wants to
-       * be a tester of the agent. Once the user confirms, she becomes a tester. An agent can send 20
-       * tester requests each day with a total maximum of 200 tester requests. If you send tester
-       * requests above those limits, the RBM platform returns a `429 RESOURCE_EXHAUSTED` response.
-       *
-       * Create a request for the method "v1.testers".
-       *
-       * This request holds the parameters needed by the the businesscommunications server.  After
-       * setting any optional parameters, call the {@link Testers#execute()} method to invoke the remote
-       * operation. <p> {@link
-       * Testers#initialize(com.google.api.client.googleapis.services.AbstractGoogleClientRequest)} must
-       * be called to initialize this instance immediately after invoking the constructor. </p>
-       *
-       * @param content the {@link com.google.api.services.businesscommunications.v1.model.Tester}
-       * @since 1.13
-       */
-      protected Testers(com.google.api.services.businesscommunications.v1.model.Tester content) {
-        super(BusinessCommunications.this, "POST", REST_PATH, content, com.google.api.services.businesscommunications.v1.model.Tester.class);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers set$Xgafv(java.lang.String $Xgafv) {
-        return (Testers) super.set$Xgafv($Xgafv);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setAccessToken(java.lang.String accessToken) {
-        return (Testers) super.setAccessToken(accessToken);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setAlt(java.lang.String alt) {
-        return (Testers) super.setAlt(alt);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setCallback(java.lang.String callback) {
-        return (Testers) super.setCallback(callback);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setFields(java.lang.String fields) {
-        return (Testers) super.setFields(fields);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setKey(java.lang.String key) {
-        return (Testers) super.setKey(key);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setOauthToken(java.lang.String oauthToken) {
-        return (Testers) super.setOauthToken(oauthToken);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setPrettyPrint(java.lang.Boolean prettyPrint) {
-        return (Testers) super.setPrettyPrint(prettyPrint);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setQuotaUser(java.lang.String quotaUser) {
-        return (Testers) super.setQuotaUser(quotaUser);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setUploadType(java.lang.String uploadType) {
-        return (Testers) super.setUploadType(uploadType);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers setUploadProtocol(java.lang.String uploadProtocol) {
-        return (Testers) super.setUploadProtocol(uploadProtocol);
-      }
-
-      @com.google.errorprone.annotations.CanIgnoreReturnValue
-      @Override
-      public Testers set(String parameterName, Object value) {
-        return (Testers) super.set(parameterName, value);
       }
     }
 

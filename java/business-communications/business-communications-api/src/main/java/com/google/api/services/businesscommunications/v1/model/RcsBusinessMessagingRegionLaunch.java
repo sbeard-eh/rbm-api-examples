@@ -31,13 +31,6 @@ package com.google.api.services.businesscommunications.v1.model;
 public final class RcsBusinessMessagingRegionLaunch extends com.google.api.client.json.GenericJson {
 
   /**
-   * Optional. Specifies the party designation of the agent launch.
-   * The value may be {@code null}.
-   */
-  @com.google.api.client.util.Key
-  private java.lang.String agentLaunchPartyDesignation;
-
-  /**
    * Comment from the carrier.
    * The value may be {@code null}.
    */
@@ -57,24 +50,6 @@ public final class RcsBusinessMessagingRegionLaunch extends com.google.api.clien
    */
   @com.google.api.client.util.Key
   private String updateTime;
-
-  /**
-   * Optional. Specifies the party designation of the agent launch.
-   * @return value or {@code null} for none
-   */
-  public java.lang.String getAgentLaunchPartyDesignation() {
-    return agentLaunchPartyDesignation;
-  }
-
-  /**
-   * Optional. Specifies the party designation of the agent launch.
-   * @param agentLaunchPartyDesignation agentLaunchPartyDesignation or {@code null} for none
-   */
-  @com.google.errorprone.annotations.CanIgnoreReturnValue
-  public RcsBusinessMessagingRegionLaunch setAgentLaunchPartyDesignation(java.lang.String agentLaunchPartyDesignation) {
-    this.agentLaunchPartyDesignation = agentLaunchPartyDesignation;
-    return this;
-  }
 
   /**
    * Comment from the carrier.

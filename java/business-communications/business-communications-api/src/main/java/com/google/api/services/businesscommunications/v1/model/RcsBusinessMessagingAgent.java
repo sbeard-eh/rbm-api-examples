@@ -57,8 +57,8 @@ public final class RcsBusinessMessagingAgent extends com.google.api.client.json.
   /**
    * Required. Description of the agent that is visible to users. Maximum 100 characters. See [Edit
    * agent information](https://developers.google.com/business-communications/rcs-business-
-   * messaging/guides/build/agents/edit-agent-information?hl=en#edit_your_agents_information) for
-   * detailed requirements.
+   * messaging/guides/build/agents/edit-agent-information#edit_your_agents_information) for detailed
+   * requirements.
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
@@ -86,6 +86,15 @@ public final class RcsBusinessMessagingAgent extends com.google.api.client.json.
    */
   @com.google.api.client.util.Key
   private java.lang.String hostingRegion;
+
+  /**
+   * Optional. India business principal entity identifier (PE ID) of the business that is associated
+   * with the agent. Must populate if planning to launch the agent in India. Otherwise, do not
+   * populate.
+   * The value may be {@code null}.
+   */
+  @com.google.api.client.util.Key
+  private java.lang.String indiaPrincipalEntityId;
 
   /**
    * Output only. Launch details for the agent. Only populated for carriers, and only with the
@@ -199,8 +208,8 @@ public final class RcsBusinessMessagingAgent extends com.google.api.client.json.
   /**
    * Required. Description of the agent that is visible to users. Maximum 100 characters. See [Edit
    * agent information](https://developers.google.com/business-communications/rcs-business-
-   * messaging/guides/build/agents/edit-agent-information?hl=en#edit_your_agents_information) for
-   * detailed requirements.
+   * messaging/guides/build/agents/edit-agent-information#edit_your_agents_information) for detailed
+   * requirements.
    * @return value or {@code null} for none
    */
   public java.lang.String getDescription() {
@@ -210,8 +219,8 @@ public final class RcsBusinessMessagingAgent extends com.google.api.client.json.
   /**
    * Required. Description of the agent that is visible to users. Maximum 100 characters. See [Edit
    * agent information](https://developers.google.com/business-communications/rcs-business-
-   * messaging/guides/build/agents/edit-agent-information?hl=en#edit_your_agents_information) for
-   * detailed requirements.
+   * messaging/guides/build/agents/edit-agent-information#edit_your_agents_information) for detailed
+   * requirements.
    * @param description description or {@code null} for none
    */
   @com.google.errorprone.annotations.CanIgnoreReturnValue
@@ -275,6 +284,28 @@ public final class RcsBusinessMessagingAgent extends com.google.api.client.json.
   @com.google.errorprone.annotations.CanIgnoreReturnValue
   public RcsBusinessMessagingAgent setHostingRegion(java.lang.String hostingRegion) {
     this.hostingRegion = hostingRegion;
+    return this;
+  }
+
+  /**
+   * Optional. India business principal entity identifier (PE ID) of the business that is associated
+   * with the agent. Must populate if planning to launch the agent in India. Otherwise, do not
+   * populate.
+   * @return value or {@code null} for none
+   */
+  public java.lang.String getIndiaPrincipalEntityId() {
+    return indiaPrincipalEntityId;
+  }
+
+  /**
+   * Optional. India business principal entity identifier (PE ID) of the business that is associated
+   * with the agent. Must populate if planning to launch the agent in India. Otherwise, do not
+   * populate.
+   * @param indiaPrincipalEntityId indiaPrincipalEntityId or {@code null} for none
+   */
+  @com.google.errorprone.annotations.CanIgnoreReturnValue
+  public RcsBusinessMessagingAgent setIndiaPrincipalEntityId(java.lang.String indiaPrincipalEntityId) {
+    this.indiaPrincipalEntityId = indiaPrincipalEntityId;
     return this;
   }
 

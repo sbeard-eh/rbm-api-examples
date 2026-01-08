@@ -48,7 +48,7 @@ public final class AgentPerformance extends com.google.api.client.json.GenericJs
   private java.lang.String countryCode;
 
   /**
-   * Required. The name that the agent displays to users. Maximum 100 characters. Not modifiable
+   * Required. The name that the agent displays to users. Maximum 40 characters. Not modifiable
    * after agent verification.
    * The value may be {@code null}.
    */
@@ -128,7 +128,7 @@ public final class AgentPerformance extends com.google.api.client.json.GenericJs
   }
 
   /**
-   * Required. The name that the agent displays to users. Maximum 100 characters. Not modifiable
+   * Required. The name that the agent displays to users. Maximum 40 characters. Not modifiable
    * after agent verification.
    * @return value or {@code null} for none
    */
@@ -137,7 +137,7 @@ public final class AgentPerformance extends com.google.api.client.json.GenericJs
   }
 
   /**
-   * Required. The name that the agent displays to users. Maximum 100 characters. Not modifiable
+   * Required. The name that the agent displays to users. Maximum 40 characters. Not modifiable
    * after agent verification.
    * @param displayName displayName or {@code null} for none
    */
