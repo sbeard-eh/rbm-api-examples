@@ -37,7 +37,7 @@ public final class BatchGetUsersResponse extends com.google.api.client.json.Gene
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private java.lang.Integer reachableRandomSampleUserCount;
+  private java.lang.Double reachableRandomSampleUserCount;
 
   /**
    * List of users' phone numbers that RBM can reach. Only includes users on carriers that the agent
@@ -54,7 +54,7 @@ public final class BatchGetUsersResponse extends com.google.api.client.json.Gene
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private java.lang.Integer totalRandomSampleUserCount;
+  private java.lang.Double totalRandomSampleUserCount;
 
   /**
    * Count of phone numbers from the randomly selected list that are RCS-reachable across all
@@ -62,7 +62,7 @@ public final class BatchGetUsersResponse extends com.google.api.client.json.Gene
    * total_random_sample_user_count can approximate the potential reach for a list of users.
    * @return value or {@code null} for none
    */
-  public java.lang.Integer getReachableRandomSampleUserCount() {
+  public java.lang.Double getReachableRandomSampleUserCount() {
     return reachableRandomSampleUserCount;
   }
 
@@ -72,7 +72,7 @@ public final class BatchGetUsersResponse extends com.google.api.client.json.Gene
    * total_random_sample_user_count can approximate the potential reach for a list of users.
    * @param reachableRandomSampleUserCount reachableRandomSampleUserCount or {@code null} for none
    */
-  public BatchGetUsersResponse setReachableRandomSampleUserCount(java.lang.Integer reachableRandomSampleUserCount) {
+  public BatchGetUsersResponse setReachableRandomSampleUserCount(java.lang.Double reachableRandomSampleUserCount) {
     this.reachableRandomSampleUserCount = reachableRandomSampleUserCount;
     return this;
   }
@@ -102,7 +102,7 @@ public final class BatchGetUsersResponse extends com.google.api.client.json.Gene
    * less than 500.
    * @return value or {@code null} for none
    */
-  public java.lang.Integer getTotalRandomSampleUserCount() {
+  public java.lang.Double getTotalRandomSampleUserCount() {
     return totalRandomSampleUserCount;
   }
 
@@ -112,7 +112,7 @@ public final class BatchGetUsersResponse extends com.google.api.client.json.Gene
    * less than 500.
    * @param totalRandomSampleUserCount totalRandomSampleUserCount or {@code null} for none
    */
-  public BatchGetUsersResponse setTotalRandomSampleUserCount(java.lang.Integer totalRandomSampleUserCount) {
+  public BatchGetUsersResponse setTotalRandomSampleUserCount(java.lang.Double totalRandomSampleUserCount) {
     this.totalRandomSampleUserCount = totalRandomSampleUserCount;
     return this;
   }
