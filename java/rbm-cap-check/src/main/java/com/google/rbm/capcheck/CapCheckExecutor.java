@@ -19,7 +19,7 @@ package com.google.rbm.capcheck;
 // [START import_libraries]
 
 import com.google.rbm.RbmApiHelper;
-import com.google.api.services.rcsbusinessmessaging.v1.model.BatchGetUsersResponse;
+import com.google.rcsbusinessmessaging.v1.model.BatchGetUsersResponse;
 
 import java.io.*;
 import java.text.NumberFormat;
@@ -56,7 +56,10 @@ public class CapCheckExecutor implements Runnable {
   // The maximum number of devices for a single bulk capability check.
   // Above this number, results become a statistical average.
   // See https://developers.google.com/business-communications/rcs-business-messaging/reference/rest/v1/users/batchGet
-  private static final int MAX_DEVICES = 499;
+  private static final int MAX_DEVICES = 10000;
+     
+  // The minimum number of devices the bulk user check API will return results for
+  private static final int MIN_DEVICES = 500;    
 
   // Reference to the RBM api
   private static RbmApiHelper rbmApiHelper;
@@ -283,14 +286,28 @@ public class CapCheckExecutor implements Runnable {
    */
   private List<BatchGetUsersResponse> getUsers(List<String> phoneNumbers) throws Exception {
     List<BatchGetUsersResponse> usersResponses = new ArrayList<>();
+       
+    // Determine the largest batch size which avoids a final batch with less than 500 users
+    int size = phoneNumbers.size ();
+    int batch_size = MAX_DEVICES;
+    int remainder = size % batch_size;
+    while (batch_size >= MIN_DEVICES && remainder > 0 && remainder < MIN_DEVICES) {
+      batch_size--;
+      remainder = size % batch_size;
+    }
+    if (batch_size < MIN_DEVICES) {
+      // No suitable value for batch_size was found so use the default
+      batch_size = MIN_DEVICES;
+    }
+
     int index = 0;
     while (index < phoneNumbers.size()) {
       List<String> subList = new ArrayList<>(phoneNumbers.subList(index,
-          Math.min(index + MAX_DEVICES, phoneNumbers.size())));
+          Math.min(index + batch_size, phoneNumbers.size())));
 
       System.out.print(".");
 
-      index += MAX_DEVICES;
+      index += batch_size;
       usersResponses.add(rbmApiHelper.batchGet(subList));
     }
 
