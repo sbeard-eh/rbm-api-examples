@@ -21,8 +21,8 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.services.rcsbusinessmessaging.v1.RCSBusinessMessaging;
-import com.google.api.services.rcsbusinessmessaging.v1.model.*;
+import com.google.rcsbusinessmessaging.v1.RCSBusinessMessaging;
+import com.google.rcsbusinessmessaging.v1.model.*;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -226,7 +226,7 @@ public class RbmApiHelper {
         try {
             // execute synchronous batch user check and log the result
             String jsonResponse = batchCapCheck.execute().toString();
-            logger.info(jsonResponse);
+            //logger.info(jsonResponse);
 
             Gson gson = new Gson();
             Type type =  new TypeToken<BatchGetUsersResponse>(){}.getType();
