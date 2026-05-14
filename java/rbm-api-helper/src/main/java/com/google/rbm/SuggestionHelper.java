@@ -15,8 +15,8 @@ package com.google.rbm;
 
 // [START of the suggestion help wrapper class]
 
-import com.google.api.services.rcsbusinessmessaging.v1.model.SuggestedReply;
-import com.google.api.services.rcsbusinessmessaging.v1.model.Suggestion;
+import com.google.rcsbusinessmessaging.v1.model.SuggestedReply;
+import com.google.rcsbusinessmessaging.v1.model.Suggestion;
 
 /**
  * Utility class for Suggestion postbackData and text.
