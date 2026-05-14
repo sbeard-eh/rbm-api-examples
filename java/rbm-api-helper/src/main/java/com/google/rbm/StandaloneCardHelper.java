@@ -14,8 +14,8 @@
 package com.google.rbm;
 
 // [START of the standalone card help wrapper class]
-import com.google.api.services.rcsbusinessmessaging.v1.model.CardContent;
-import com.google.api.services.rcsbusinessmessaging.v1.model.Suggestion;
+import com.google.rcsbusinessmessaging.v1.model.CardContent;
+import com.google.rcsbusinessmessaging.v1.model.Suggestion;
 import com.google.rbm.cards.MediaHeight;
 
 import java.util.ArrayList;
